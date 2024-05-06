@@ -1,0 +1,16 @@
+apply plugin: 'application'
+apply plugin: 'eclipse'
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+compileJava.options.encoding = 'windows-1252'
+compileTestJava.options.encoding = 'windows-1252'
+
+mainClassName = 'cloud1.neelix.NeelixApp'
+
+dependencies {
+}
+
+repositories {
+    mavenCentral()
+}
