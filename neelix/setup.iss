@@ -21,7 +21,7 @@ DefaultDirName={autopf}\Neelix1
 DefaultGroupName=Neelix1
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputBaseFilename=mysetup
+OutputBaseFilename=neelixsetup
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -31,9 +31,12 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "german"; MessagesFile: "compiler:Languages\German.isl"
 
 [Files]
+Source: "C:\projects\git-repos-2203\gastendonk\cloud2\neelix\jre\OpenJDK17U-jre_x64_windows_hotspot_17.0.13_11.msi"; DestDir: {tmp}; Flags: deleteafterinstall;
 Source: "C:\projects\git-repos-2203\gastendonk\cloud2\neelix\build\install\neelix\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
 
+[Run]
+Filename: "msiexec.exe"; Parameters: "/i ""{tmp}\OpenJDK17U-jre_x64_windows_hotspot_17.0.13_11.msi"" /qb"; WorkingDir: {tmp};
